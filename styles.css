@@ -36,3 +36,49 @@ p.instructions {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+.optimalTeenColumn #optimalTeenTable{
+	float: left;
+	width: 250px;
+	height: 500px; /* Modify afterwards */
+	border: 1px solid blue;
+}
+#optimalTeenTable tbody{
+	border-collapse: collapse;
+	content: '';
+	display: block;
+	/* line-height: 10px; */
+	
+}
+#optimalTeenTable tr{
+	width: 100%;
+	display: table;
+}
+#optimalTeenTable th{
+	width: 60%;
+	align: center;
+	padding: 5px;
+	text-align: left;
+	border: 1px solid orange;
+	color: white;
+}
+#optimalTeenTable td{
+	width: 60%;
+	align: center;
+	padding: 5px;
+	text-align: left;
+	border: 1px solid orange;
+	color: white;
+}
+#optimalTeenTable td.blank{
+	width: 60%;
+	align: center;
+	padding: 5px;
+	text-align: left;
+	border: 0px solid orange;
+	color: white;
+}
