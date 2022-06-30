@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 
+<script src="./index.js"></script> 
+
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -18,7 +20,7 @@
 		<link rel="stylesheet" href="./styles.css">
 	</head>
 
-	<body>
+	<body onload="onLoad()">
 		<div class="titleBarContainer">
 			<img src="./images/Gura_VHS_Updated_NoPixelation_V3.png"  width="225" height="225">
 			<div class="vertical-center">
@@ -142,7 +144,13 @@
 						</tr>
 						<tr>
 							<th style="border-width: 3px 0px 0px 3px;border-style:double solid solid double;">Perks:</th>
-							<td style="border-width: 3px 0px 0px 3px;border-style:double double solid double;">XAX</td>
+							<td style="border-width: 3px 0px 0px 3px;border-style:double double solid double;">
+								<div class="select">
+									<select name="perk1" id="perk1">
+										<option value="None">--None--</option>
+									</select>
+								</div>
+							</td>
 							<td style="border-width: 3px 0px 0px 0px;border-style:double double solid solid;">XAX</td>
 							<td style="border-width: 3px 0px 0px 0px;border-style:double double solid solid;">XAX</td>
 							<td style="border-width: 3px 0px 0px 0px;border-style:double double solid solid;">XAX</td>

@@ -172,3 +172,53 @@ p.instructions {
 	border: 0px solid orange;
 	color: white;
 }
+
+select {
+   -webkit-appearance:none;
+   -moz-appearance:none;
+   -ms-appearance:none;
+   appearance:none;
+   outline:0;
+   box-shadow:none;
+   border:0!important;
+   background: rgb(8, 8, 8);
+   background-image: none;
+   width: 100%;
+   /* flex: 1; */
+   /* padding: 0 .5em; */
+   text-align: center;
+   color:#fff;
+   cursor:pointer;
+   font-size: 1em;
+   /* font-family: 'Open Sans', sans-serif; */
+}
+select::-ms-expand {
+   display: none;
+}
+.select {
+   position: relative;
+   display: flex;
+   width: 100%;
+   height: 100%;
+   line-height: 5;
+   background: rgb(8, 8, 8);
+   overflow: hidden;
+   border-radius: .25em;
+   text-align: center;
+}
+.select::after {
+   content: '\25BC';
+   position: absolute;
+   top: 0;
+   right: 0;
+   /* padding: 0 1em; */
+   background: rgb(8, 8, 8);
+   cursor:pointer;
+   pointer-events:none;
+   transition:.25s all ease;
+   text-align: center;
+}
+.select:hover::after {
+   color: rgb(8, 8, 8);
+   text-align: center;
+}
