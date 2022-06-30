@@ -1,0 +1,174 @@
+@font-face {
+	font-family: VCR_OSD_MONO;
+	src: url("./fonts/VCR_OSD_MONO.ttf");
+}
+
+body {
+	background-color: rgb(8, 8, 8);
+}
+h1 {
+	color: cyan;
+	font-size: 45px;
+	font-family: VCR_OSD_MONO;
+	margin-left: 250px;
+}
+h2 {
+	color: cyan;
+	font-size: 30px;
+	font-family: VCR_OSD_MONO;
+	text-align: center;
+	margin-top: 110px;
+	/* display: block; */
+	/* float: center; */
+}
+p {
+	color: red;
+}
+p.instructions {
+	font-size: 18px;
+	color: rgb(178, 115, 0); /* Orange */
+	margin-left: 275px;
+	margin-top: -20px;
+	margin-right: 30%;
+	width: 800px;
+}
+.titleBarContainer {
+	height: 225px;
+	width: 100%;
+	position: relative;
+	/* border: 1px solid green; */
+}
+.vertical-center {
+  margin: 0px;
+  position: absolute;
+  top: 35%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.row:after {
+	content: "";
+	display: table;
+	clear: none;
+	float: left;
+}
+.optimalTeenColumn #optimalTeenTable{
+	float: left;
+	margin-top: 10px;
+	width: 250px;
+	height: 500px; /* Modify afterwards */
+	/* border: 1px solid blue; */
+}
+#optimalTeenTable tbody{
+	border-collapse: collapse;
+	content: '';
+	display: block;
+}
+#optimalTeenTable tr{
+	width: 100%;
+	display: table;
+}
+#optimalTeenTable th{
+	width: 60%;
+	align: center;
+	padding: 5px;
+	text-align: left; 
+	border: 2px solid rgb(0, 165, 165); /*Cyan*/
+	color: white;
+}
+#optimalTeenTable td{
+	width: 60%;
+	align: center;
+	padding: 5px;
+	text-align: left;
+	border: 1px solid rgb(91, 39, 130); /*Purple*/ 
+	color: white;
+}
+#optimalTeenTable td.blank{
+	width: 60%;
+	align: center;
+	padding: 5px;
+	text-align: left;
+	border: 0px solid orange;
+	color: white;
+}
+.perksNTeensColumn {
+	float: left;
+	width: 800px;
+	height: 100%; /* Modify afterwards */
+	/* border: 1px solid red; */
+	border-collapse: collapse;
+	margin-left: 20px;
+	margin-top: 13px;
+	display: block;
+}
+.perksNTeensColumn #perkSelectionTable{
+	float: left;
+	width: 800px;
+	height: 100%; /* Modify afterwards */
+	border-collapse: collapse;
+	display: table;
+}
+#perkSelectionTable tr{
+	width: 100%;
+	display: table;
+}
+#perkSelectionTable th{
+	width: 60px;
+	align: center;
+	padding: 5px;
+	text-align: left;
+	border: 1px solid rgb(178, 115, 0); /* Orange */
+	color: white;
+}
+#perkSelectionTable td{
+	width: 60px;
+	/* align: center; */
+	padding: 5px;
+	text-align: center;
+	border: 1px solid rgb(91, 39, 130);
+	color: white;
+}
+#perkSelectionTable td.blank{
+	width: 60%;
+	align: center;
+	padding: 5px;
+	text-align: left;
+	border: 0px solid orange;
+	color: white;
+}
+.perksNTeensColumn #perkCostTable{
+	float: left;
+	width: 800px;
+	height: 100%; /* Modify afterwards */
+	border: 1px solid red;
+	border-collapse: collapse;
+	margin-top: 4px;
+	display: table;
+}
+#perkCostTable tr{
+	width: 100%;
+}
+#perkCostTable th{
+	width: 60px;
+	align: center;
+	padding: 5px;
+	text-align: left;
+	border: 1px solid rgb(178, 115, 0); /* Orange */
+	color: white;
+}
+#perkCostTable td{
+	width: 60px;
+	align: center;
+	padding: 5px;
+	text-align: center;
+	border: 1px solid rgb(91, 39, 130); /*Purple*/ ;
+	color: white;
+}
+#perkCostTable td.blank{
+	width: 60%;
+	align: center;
+	padding: 5px;
+	text-align: left;
+	border: 0px solid orange;
+	color: white;
+}
