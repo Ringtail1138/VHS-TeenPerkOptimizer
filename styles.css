@@ -4,7 +4,7 @@
 }
 
 body {
-	background-color: rgb(43, 42, 51);
+	background-color: rgb(8, 8, 8);
 }
 h1 {
 	color: cyan;
@@ -12,12 +12,21 @@ h1 {
 	font-family: VCR_OSD_MONO;
 	margin-left: 250px;
 }
+h2 {
+	color: cyan;
+	font-size: 30px;
+	font-family: VCR_OSD_MONO;
+	text-align: center;
+	margin-top: 110px;
+	/* display: block; */
+	/* float: center; */
+}
 p {
 	color: red;
 }
 p.instructions {
 	font-size: 18px;
-	color: lime;
+	color: rgb(178, 115, 0); /* Orange */
 	margin-left: 275px;
 	margin-top: -20px;
 	margin-right: 30%;
@@ -27,7 +36,7 @@ p.instructions {
 	height: 225px;
 	width: 100%;
 	position: relative;
-	border: 1px solid green;
+	/* border: 1px solid green; */
 }
 .vertical-center {
   margin: 0px;
@@ -44,9 +53,10 @@ p.instructions {
 }
 .optimalTeenColumn #optimalTeenTable{
 	float: left;
+	margin-top: 10px;
 	width: 250px;
 	height: 500px; /* Modify afterwards */
-	border: 1px solid blue;
+	/* border: 1px solid blue; */
 }
 #optimalTeenTable tbody{
 	border-collapse: collapse;
@@ -61,8 +71,8 @@ p.instructions {
 	width: 60%;
 	align: center;
 	padding: 5px;
-	text-align: left;
-	border: 1px solid orange;
+	text-align: left; 
+	border: 2px solid rgb(0, 165, 165); /*Cyan*/
 	color: white;
 }
 #optimalTeenTable td{
@@ -70,7 +80,7 @@ p.instructions {
 	align: center;
 	padding: 5px;
 	text-align: left;
-	border: 1px solid orange;
+	border: 1px solid rgb(91, 39, 130); /*Purple*/ 
 	color: white;
 }
 #optimalTeenTable td.blank{
@@ -81,14 +91,22 @@ p.instructions {
 	border: 0px solid orange;
 	color: white;
 }
+.perksNTeensColumn {
+	float: left;
+	width: 800px;
+	height: 100%; /* Modify afterwards */
+	/* border: 1px solid red; */
+	border-collapse: collapse;
+	margin-left: 20px;
+	margin-top: 13px;
+	display: block;
+}
 .perksNTeensColumn #perkSelectionTable{
 	float: left;
 	width: 800px;
 	height: 100%; /* Modify afterwards */
-	border: 1px solid red;
 	border-collapse: collapse;
-	margin-left: 20px;
-	margin-top: 20px;
+	display: table;
 }
 #perkSelectionTable tr{
 	width: 100%;
@@ -99,15 +117,15 @@ p.instructions {
 	align: center;
 	padding: 5px;
 	text-align: left;
-	border: 1px solid lime;
+	border: 1px solid rgb(178, 115, 0); /* Orange */
 	color: white;
 }
 #perkSelectionTable td{
 	width: 60px;
-	align: center;
+	/* align: center; */
 	padding: 5px;
 	text-align: center;
-	border: 1px solid orange;
+	border: 1px solid rgb(91, 39, 130);
 	color: white;
 }
 #perkSelectionTable td.blank{
@@ -124,19 +142,18 @@ p.instructions {
 	height: 100%; /* Modify afterwards */
 	border: 1px solid red;
 	border-collapse: collapse;
-	margin-left: 20px;
-	margin-top: 20px;
+	margin-top: 4px;
+	display: table;
 }
 #perkCostTable tr{
 	width: 100%;
-	/* display: table; */
 }
 #perkCostTable th{
 	width: 60px;
 	align: center;
 	padding: 5px;
 	text-align: left;
-	border: 1px solid lime;
+	border: 1px solid rgb(178, 115, 0); /* Orange */
 	color: white;
 }
 #perkCostTable td{
@@ -144,7 +161,7 @@ p.instructions {
 	align: center;
 	padding: 5px;
 	text-align: center;
-	border: 1px solid orange;
+	border: 1px solid rgb(91, 39, 130); /*Purple*/ ;
 	color: white;
 }
 #perkCostTable td.blank{
