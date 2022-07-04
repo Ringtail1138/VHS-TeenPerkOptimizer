@@ -16,6 +16,9 @@ teenPerks.push(new Perk("Evil Eye 3",3,7,"Jess"));
 teenPerks.push(new Perk("Low Profile 1",1,4,"Jess"));
 teenPerks.push(new Perk("Low Profile 2",2,8,"Jess"));
 teenPerks.push(new Perk("Low Profile 3",3,12,"Jess"));
+teenPerks.push(new Perk("Silent Shadow 1",1,3,"Jess"));
+teenPerks.push(new Perk("Silent Shadow 2",2,5,"Jess"));
+teenPerks.push(new Perk("Silent Shadow 3",3,8,"Jess"));
 
 
 function onLoad() {
