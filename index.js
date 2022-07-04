@@ -68,6 +68,10 @@ function onLoad() {
 	// alert(teenPerks[0].name);
 	populatePerks();
 	perk1Change();
+	perk2Change();
+	perk3Change();
+	perk4Change();
+	perk5Change();
 }
 
 // adds perk names and tiers to the perk selection table
@@ -187,6 +191,7 @@ function perk2Change() {
 	var perk2Name = document.getElementById("perk2Name").value;
 	var perk2Tier = document.getElementById("perk2Tier").value;
 	var perk2Cost = 0;
+	var slot2Cost = document.getElementById("slot2Cost");
 
 	// convert perk 2's tier
 	if(perk2Tier === "Tier I") {
@@ -199,11 +204,18 @@ function perk2Change() {
 		perk2Tier = 3;
 	}
 	
-	// get and assign the object for the slot 2 perk
-	var perk2 = teenPerks.filter(perk => perk.name === perk2Name);
-	perk2 = perk2.filter(perk => perk.tier == perk2Tier);
-	perk2 = perk2[0];
-	perk2Cost = perk2.cost;
+	// get and assign the object for the slot 1 perk
+	if(perk2Name === "--None--") {
+		slot2Cost.innerHTML = 0;
+	}
+	else{
+		var perk2 = teenPerks.filter(perk => perk.name === perk2Name);
+		perk2 = perk2.filter(perk => perk.tier == perk2Tier);
+		perk2 = perk2[0];
+		perk2Cost = perk2.cost;
+		
+		slot2Cost.innerHTML = perk2Cost;
+	}
 	
 	// todo: add in function that calculates the optimal teen
 }
@@ -213,6 +225,7 @@ function perk3Change() {
 	var perk3Name = document.getElementById("perk3Name").value;
 	var perk3Tier = document.getElementById("perk3Tier").value;
 	var perk3Cost = 0;
+	var slot3Cost = document.getElementById("slot3Cost");
 
 	// convert perk 3's tier
 	if(perk3Tier === "Tier I") {
@@ -225,11 +238,18 @@ function perk3Change() {
 		perk3Tier = 3;
 	}
 	
-	// get and assign the object for the slot 3 perk
-	var perk3 = teenPerks.filter(perk => perk.name === perk3Name);
-	perk3 = perk3.filter(perk => perk.tier == perk3Tier);
-	perk3 = perk3[0];
-	perk3Cost = perk3.cost;
+	// get and assign the object for the slot 1 perk
+	if(perk3Name === "--None--") {
+		slot3Cost.innerHTML = 0;
+	}
+	else{
+		var perk3 = teenPerks.filter(perk => perk.name === perk3Name);
+		perk3 = perk3.filter(perk => perk.tier == perk3Tier);
+		perk3 = perk3[0];
+		perk3Cost = perk3.cost;
+		
+		slot3Cost.innerHTML = perk3Cost;
+	}
 	
 	// todo: add in function that calculates the optimal teen
 }
@@ -239,6 +259,7 @@ function perk4Change() {
 	var perk4Name = document.getElementById("perk4Name").value;
 	var perk4Tier = document.getElementById("perk4Tier").value;
 	var perk4Cost = 0;
+	var slot4Cost = document.getElementById("slot4Cost");
 
 	// convert perk 4's tier
 	if(perk4Tier === "Tier I") {
@@ -251,11 +272,18 @@ function perk4Change() {
 		perk4Tier = 3;
 	}
 	
-	// get and assign the object for the slot 4 perk
-	var perk4 = teenPerks.filter(perk => perk.name === perk4Name);
-	perk4 = perk4.filter(perk => perk.tier == perk4Tier);
-	perk4 = perk4[0];
-	perk4Cost = perk4.cost;
+	// get and assign the object for the slot 1 perk
+	if(perk4Name === "--None--") {
+		slot4Cost.innerHTML = 0;
+	}
+	else{
+		var perk4 = teenPerks.filter(perk => perk.name === perk4Name);
+		perk4 = perk4.filter(perk => perk.tier == perk4Tier);
+		perk4 = perk4[0];
+		perk4Cost = perk4.cost;
+		
+		slot4Cost.innerHTML = perk4Cost;
+	}
 	
 	// todo: add in function that calculates the optimal teen
 }
@@ -265,6 +293,7 @@ function perk5Change() {
 	var perk5Name = document.getElementById("perk5Name").value;
 	var perk5Tier = document.getElementById("perk5Tier").value;
 	var perk5Cost = 0;
+	var slot5Cost = document.getElementById("slot5Cost");
 
 	// convert perk 5's tier
 	if(perk5Tier === "Tier I") {
@@ -277,11 +306,18 @@ function perk5Change() {
 		perk5Tier = 3;
 	}
 	
-	// get and assign the object for the slot 5 perk
-	var perk5 = teenPerks.filter(perk => perk.name === perk5Name);
-	perk5 = perk5.filter(perk => perk.tier == perk5Tier);
-	perk5 = perk5[0];
-	perk5Cost = perk5.cost;
+	// get and assign the object for the slot 1 perk
+	if(perk5Name === "--None--") {
+		slot5Cost.innerHTML = 0;
+	}
+	else{
+		var perk5 = teenPerks.filter(perk => perk.name === perk5Name);
+		perk5 = perk5.filter(perk => perk.tier == perk5Tier);
+		perk5 = perk5[0];
+		perk5Cost = perk5.cost;
+		
+		slot5Cost.innerHTML = perk5Cost;
+	}
 	
 	// todo: add in function that calculates the optimal teen
 }
