@@ -67,6 +67,7 @@ teenPerks.push(new Perk("Team Spirit",3,12,"Gloria"));
 function onLoad() {
 	// alert(teenPerks[0].name);
 	populatePerks();
+	perk1Change();
 }
 
 // adds perk names and tiers to the perk selection table
@@ -146,6 +147,155 @@ function populatePerks() {
 		perk5Tier.add(slot5Tier);
 	}
 }
+
+// calculates perk costs once a new perk/tier is selected
+function perk1Change() {
+	var perk1Name = document.getElementById("perk1Name").value;
+	var perk1Tier = document.getElementById("perk1Tier").value;
+	var perk1Cost = 0;
+	var slot1Cost = document.getElementById("slot1Cost");
+
+	// convert perk 1's tier
+	if(perk1Tier === "Tier I") {
+		perk1Tier = 1;
+	}
+	else if(perk1Tier === "Tier II") {
+		perk1Tier = 2;
+	}
+	else if(perk1Tier === "Tier III") {
+		perk1Tier = 3;
+	}
+	
+	// get and assign the object for the slot 1 perk
+	if(perk1Name === "--None--") {
+		slot1Cost.innerHTML = 0;
+	}
+	else{
+		var perk1 = teenPerks.filter(perk => perk.name === perk1Name);
+		perk1 = perk1.filter(perk => perk.tier == perk1Tier);
+		perk1 = perk1[0];
+		perk1Cost = perk1.cost;
+		
+		slot1Cost.innerHTML = perk1Cost;
+	}
+	
+	// todo: add in function that calculates the optimal teen
+}
+
+// calculates perk costs once a new perk/tier is selected
+function perk2Change() {
+	var perk2Name = document.getElementById("perk2Name").value;
+	var perk2Tier = document.getElementById("perk2Tier").value;
+	var perk2Cost = 0;
+
+	// convert perk 2's tier
+	if(perk2Tier === "Tier I") {
+		perk2Tier = 1;
+	}
+	else if(perk2Tier === "Tier II") {
+		perk2Tier = 2;
+	}
+	else if(perk2Tier === "Tier III") {
+		perk2Tier = 3;
+	}
+	
+	// get and assign the object for the slot 2 perk
+	var perk2 = teenPerks.filter(perk => perk.name === perk2Name);
+	perk2 = perk2.filter(perk => perk.tier == perk2Tier);
+	perk2 = perk2[0];
+	perk2Cost = perk2.cost;
+	
+	// todo: add in function that calculates the optimal teen
+}
+
+// calculates perk costs once a new perk/tier is selected
+function perk3Change() {
+	var perk3Name = document.getElementById("perk3Name").value;
+	var perk3Tier = document.getElementById("perk3Tier").value;
+	var perk3Cost = 0;
+
+	// convert perk 3's tier
+	if(perk3Tier === "Tier I") {
+		perk3Tier = 1;
+	}
+	else if(perk3Tier === "Tier II") {
+		perk3Tier = 2;
+	}
+	else if(perk3Tier === "Tier III") {
+		perk3Tier = 3;
+	}
+	
+	// get and assign the object for the slot 3 perk
+	var perk3 = teenPerks.filter(perk => perk.name === perk3Name);
+	perk3 = perk3.filter(perk => perk.tier == perk3Tier);
+	perk3 = perk3[0];
+	perk3Cost = perk3.cost;
+	
+	// todo: add in function that calculates the optimal teen
+}
+
+// calculates perk costs once a new perk/tier is selected
+function perk4Change() {
+	var perk4Name = document.getElementById("perk4Name").value;
+	var perk4Tier = document.getElementById("perk4Tier").value;
+	var perk4Cost = 0;
+
+	// convert perk 4's tier
+	if(perk4Tier === "Tier I") {
+		perk4Tier = 1;
+	}
+	else if(perk4Tier === "Tier II") {
+		perk4Tier = 2;
+	}
+	else if(perk4Tier === "Tier III") {
+		perk4Tier = 3;
+	}
+	
+	// get and assign the object for the slot 4 perk
+	var perk4 = teenPerks.filter(perk => perk.name === perk4Name);
+	perk4 = perk4.filter(perk => perk.tier == perk4Tier);
+	perk4 = perk4[0];
+	perk4Cost = perk4.cost;
+	
+	// todo: add in function that calculates the optimal teen
+}
+
+// calculates perk costs once a new perk/tier is selected
+function perk5Change() {
+	var perk5Name = document.getElementById("perk5Name").value;
+	var perk5Tier = document.getElementById("perk5Tier").value;
+	var perk5Cost = 0;
+
+	// convert perk 5's tier
+	if(perk5Tier === "Tier I") {
+		perk5Tier = 1;
+	}
+	else if(perk5Tier === "Tier II") {
+		perk5Tier = 2;
+	}
+	else if(perk5Tier === "Tier III") {
+		perk5Tier = 3;
+	}
+	
+	// get and assign the object for the slot 5 perk
+	var perk5 = teenPerks.filter(perk => perk.name === perk5Name);
+	perk5 = perk5.filter(perk => perk.tier == perk5Tier);
+	perk5 = perk5[0];
+	perk5Cost = perk5.cost;
+	
+	// todo: add in function that calculates the optimal teen
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

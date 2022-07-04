@@ -103,7 +103,7 @@ p.instructions {
 }
 .perksNTeensColumn #perkSelectionTable{
 	float: left;
-	width: 800px;
+	width: 900px;
 	height: 100%; /* Modify afterwards */
 	border-collapse: collapse;
 	display: table;
@@ -143,6 +143,7 @@ p.instructions {
 	border: 1px solid red;
 	border-collapse: collapse;
 	margin-top: 4px;
+	margin-left: 50px;
 	display: table;
 }
 #perkCostTable tr{
