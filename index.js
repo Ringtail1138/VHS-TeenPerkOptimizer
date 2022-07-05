@@ -9,69 +9,74 @@ class Perk{
 
 // Array of Teen perks and their tier, costs, and Teen
 let teenPerks = [];
-//add Jess perks
-teenPerks.push(new Perk("Evil Eye",1,4,"Jess"));
-teenPerks.push(new Perk("Evil Eye",2,5,"Jess"));
-teenPerks.push(new Perk("Evil Eye",3,7,"Jess"));
-teenPerks.push(new Perk("Low Profile",1,4,"Jess"));
-teenPerks.push(new Perk("Low Profile",2,8,"Jess"));
-teenPerks.push(new Perk("Low Profile",3,12,"Jess"));
-teenPerks.push(new Perk("Silent Shadow",1,3,"Jess"));
-teenPerks.push(new Perk("Silent Shadow",2,5,"Jess"));
-teenPerks.push(new Perk("Silent Shadow",3,8,"Jess"));
-
-//add Faith perks
-teenPerks.push(new Perk("Healing Hands",1,3,"Faith"));
-teenPerks.push(new Perk("Healing Hands",2,6,"Faith"));
-teenPerks.push(new Perk("Healing Hands",3,9,"Faith"));
-teenPerks.push(new Perk("Magic Touch",1,3,"Faith"));
-teenPerks.push(new Perk("Magic Touch",2,6,"Faith"));
-teenPerks.push(new Perk("Magic Touch",3,9,"Faith"));
-teenPerks.push(new Perk("Secret Admirer",1,4,"Faith"));
-teenPerks.push(new Perk("Secret Admirer",2,6,"Faith"));
-teenPerks.push(new Perk("Secret Admirer",3,8,"Faith"));
-
-//add Brett perks
-teenPerks.push(new Perk("Born Tough",1,4,"Brett"));
-teenPerks.push(new Perk("Born Tough",2,8,"Brett"));
-teenPerks.push(new Perk("Born Tough",3,12,"Brett"));
-teenPerks.push(new Perk("Never Say Die",1,3,"Brett"));
-teenPerks.push(new Perk("Never Say Die",2,6,"Brett"));
-teenPerks.push(new Perk("Never Say Die",3,9,"Brett"));
-teenPerks.push(new Perk("Vice Grip",1,6,"Brett"));
-teenPerks.push(new Perk("Vice Grip",2,8,"Brett"));
-teenPerks.push(new Perk("Vice Grip",3,12,"Brett"));
-
-//add Leo perks
-teenPerks.push(new Perk("Head Trip",1,3,"Leo"));
-teenPerks.push(new Perk("Head Trip",2,4,"Leo"));
-teenPerks.push(new Perk("Head Trip",3,5,"Leo"));
-teenPerks.push(new Perk("Quick Fix",1,4,"Leo"));
-teenPerks.push(new Perk("Quick Fix",2,6,"Leo"));
-teenPerks.push(new Perk("Quick Fix",3,8,"Leo"));
-teenPerks.push(new Perk("Street Smart",1,4,"Leo"));
-teenPerks.push(new Perk("Street Smart",2,6,"Leo"));
-teenPerks.push(new Perk("Street Smart",3,8,"Leo"));
-
-//add Gloria perks
-teenPerks.push(new Perk("Friend Zone",1,4,"Gloria"));
-teenPerks.push(new Perk("Friend Zone",2,6,"Gloria"));
-teenPerks.push(new Perk("Friend Zone",3,8,"Gloria"));
-teenPerks.push(new Perk("Lightning Fast",1,6,"Gloria"));
-teenPerks.push(new Perk("Lightning Fast",2,8,"Gloria"));
-teenPerks.push(new Perk("Lightning Fast",3,10,"Gloria"));
-teenPerks.push(new Perk("Team Spirit",1,6,"Gloria"));
-teenPerks.push(new Perk("Team Spirit",2,9,"Gloria"));
-teenPerks.push(new Perk("Team Spirit",3,12,"Gloria"));
 
 function onLoad() {
 	// alert(teenPerks[0].name);
+	populatePerkArray();
 	populatePerks();
+	populateTeenTables();
 	perk1Change();
 	perk2Change();
 	perk3Change();
 	perk4Change();
 	perk5Change();
+}
+
+function populatePerkArray() {
+	//add Jess perks
+	teenPerks.push(new Perk("Evil Eye",1,4,"Jess"));
+	teenPerks.push(new Perk("Evil Eye",2,5,"Jess"));
+	teenPerks.push(new Perk("Evil Eye",3,7,"Jess"));
+	teenPerks.push(new Perk("Low Profile",1,4,"Jess"));
+	teenPerks.push(new Perk("Low Profile",2,8,"Jess"));
+	teenPerks.push(new Perk("Low Profile",3,12,"Jess"));
+	teenPerks.push(new Perk("Silent Shadow",1,3,"Jess"));
+	teenPerks.push(new Perk("Silent Shadow",2,5,"Jess"));
+	teenPerks.push(new Perk("Silent Shadow",3,8,"Jess"));
+
+	//add Faith perks
+	teenPerks.push(new Perk("Healing Hands",1,3,"Faith"));
+	teenPerks.push(new Perk("Healing Hands",2,6,"Faith"));
+	teenPerks.push(new Perk("Healing Hands",3,9,"Faith"));
+	teenPerks.push(new Perk("Magic Touch",1,3,"Faith"));
+	teenPerks.push(new Perk("Magic Touch",2,6,"Faith"));
+	teenPerks.push(new Perk("Magic Touch",3,9,"Faith"));
+	teenPerks.push(new Perk("Secret Admirer",1,4,"Faith"));
+	teenPerks.push(new Perk("Secret Admirer",2,6,"Faith"));
+	teenPerks.push(new Perk("Secret Admirer",3,8,"Faith"));
+
+	//add Brett perks
+	teenPerks.push(new Perk("Born Tough",1,4,"Brett"));
+	teenPerks.push(new Perk("Born Tough",2,8,"Brett"));
+	teenPerks.push(new Perk("Born Tough",3,12,"Brett"));
+	teenPerks.push(new Perk("Never Say Die",1,3,"Brett"));
+	teenPerks.push(new Perk("Never Say Die",2,6,"Brett"));
+	teenPerks.push(new Perk("Never Say Die",3,9,"Brett"));
+	teenPerks.push(new Perk("Vice Grip",1,6,"Brett"));
+	teenPerks.push(new Perk("Vice Grip",2,8,"Brett"));
+	teenPerks.push(new Perk("Vice Grip",3,12,"Brett"));
+
+	//add Leo perks
+	teenPerks.push(new Perk("Head Trip",1,3,"Leo"));
+	teenPerks.push(new Perk("Head Trip",2,4,"Leo"));
+	teenPerks.push(new Perk("Head Trip",3,5,"Leo"));
+	teenPerks.push(new Perk("Quick Fix",1,4,"Leo"));
+	teenPerks.push(new Perk("Quick Fix",2,6,"Leo"));
+	teenPerks.push(new Perk("Quick Fix",3,8,"Leo"));
+	teenPerks.push(new Perk("Street Smart",1,4,"Leo"));
+	teenPerks.push(new Perk("Street Smart",2,6,"Leo"));
+	teenPerks.push(new Perk("Street Smart",3,8,"Leo"));
+
+	//add Gloria perks
+	teenPerks.push(new Perk("Friend Zone",1,4,"Gloria"));
+	teenPerks.push(new Perk("Friend Zone",2,6,"Gloria"));
+	teenPerks.push(new Perk("Friend Zone",3,8,"Gloria"));
+	teenPerks.push(new Perk("Lightning Fast",1,6,"Gloria"));
+	teenPerks.push(new Perk("Lightning Fast",2,8,"Gloria"));
+	teenPerks.push(new Perk("Lightning Fast",3,10,"Gloria"));
+	teenPerks.push(new Perk("Team Spirit",1,6,"Gloria"));
+	teenPerks.push(new Perk("Team Spirit",2,9,"Gloria"));
+	teenPerks.push(new Perk("Team Spirit",3,12,"Gloria"));
 }
 
 // adds perk names and tiers to the perk selection table
@@ -150,6 +155,64 @@ function populatePerks() {
 		perk4Tier.add(slot4Tier);
 		perk5Tier.add(slot5Tier);
 	}
+}
+
+function populateTeenTables() {
+	// set the costs on the teen tables
+	// Jess' table
+	document.getElementById("evilEye1Cost").innerHTML = teenPerks[0].cost;
+	document.getElementById("evilEye2Cost").innerHTML = teenPerks[1].cost;
+	document.getElementById("evilEye3Cost").innerHTML = teenPerks[2].cost;
+	document.getElementById("lowProfile1Cost").innerHTML = teenPerks[3].cost;
+	document.getElementById("lowProfile2Cost").innerHTML = teenPerks[4].cost;
+	document.getElementById("lowProfile3Cost").innerHTML = teenPerks[5].cost;
+	document.getElementById("silentShadow1Cost").innerHTML = teenPerks[6].cost;
+	document.getElementById("silentShadow2Cost").innerHTML = teenPerks[7].cost;
+	document.getElementById("silentShadow3Cost").innerHTML = teenPerks[8].cost;
+
+	// Faith's table
+	document.getElementById("healingHands1Cost").innerHTML = teenPerks[9].cost;
+	document.getElementById("healingHands2Cost").innerHTML = teenPerks[10].cost;
+	document.getElementById("healingHands3Cost").innerHTML = teenPerks[11].cost;
+	document.getElementById("magicTouch1Cost").innerHTML = teenPerks[12].cost;
+	document.getElementById("magicTouch2Cost").innerHTML = teenPerks[13].cost;
+	document.getElementById("magicTouch3Cost").innerHTML = teenPerks[14].cost;
+	document.getElementById("secretAdmirer1Cost").innerHTML = teenPerks[15].cost;
+	document.getElementById("secretAdmirer2Cost").innerHTML = teenPerks[16].cost;
+	document.getElementById("secretAdmirer3Cost").innerHTML = teenPerks[17].cost;
+
+	// Brett's table
+	document.getElementById("bornTough1Cost").innerHTML = teenPerks[18].cost;
+	document.getElementById("bornTough2Cost").innerHTML = teenPerks[19].cost;
+	document.getElementById("bornTough3Cost").innerHTML = teenPerks[20].cost;
+	document.getElementById("neverSayDie1Cost").innerHTML = teenPerks[21].cost;
+	document.getElementById("neverSayDie2Cost").innerHTML = teenPerks[22].cost;
+	document.getElementById("neverSayDie3Cost").innerHTML = teenPerks[23].cost;
+	document.getElementById("viceGrip1Cost").innerHTML = teenPerks[24].cost;
+	document.getElementById("viceGrip2Cost").innerHTML = teenPerks[25].cost;
+	document.getElementById("viceGrip3Cost").innerHTML = teenPerks[26].cost;
+
+	// Leo's table
+	document.getElementById("headTrip1Cost").innerHTML = teenPerks[27].cost;
+	document.getElementById("headTrip2Cost").innerHTML = teenPerks[28].cost;
+	document.getElementById("headTrip3Cost").innerHTML = teenPerks[29].cost;
+	document.getElementById("quickFix1Cost").innerHTML = teenPerks[30].cost;
+	document.getElementById("quickFix2Cost").innerHTML = teenPerks[31].cost;
+	document.getElementById("quickFix3Cost").innerHTML = teenPerks[32].cost;
+	document.getElementById("streetSmart1Cost").innerHTML = teenPerks[33].cost;
+	document.getElementById("streetSmart2Cost").innerHTML = teenPerks[34].cost;
+	document.getElementById("streetSmart3Cost").innerHTML = teenPerks[35].cost;
+
+	// Gloria's table
+	document.getElementById("friendZone1Cost").innerHTML = teenPerks[36].cost;
+	document.getElementById("friendZone2Cost").innerHTML = teenPerks[37].cost;
+	document.getElementById("friendZone3Cost").innerHTML = teenPerks[38].cost;
+	document.getElementById("lightningFast1Cost").innerHTML = teenPerks[39].cost;
+	document.getElementById("lightningFast2Cost").innerHTML = teenPerks[40].cost;
+	document.getElementById("lightningFast3Cost").innerHTML = teenPerks[41].cost;
+	document.getElementById("teamSpirit1Cost").innerHTML = teenPerks[42].cost;
+	document.getElementById("teamSpirit2Cost").innerHTML = teenPerks[43].cost;
+	document.getElementById("teamSpirit3Cost").innerHTML = teenPerks[44].cost;
 }
 
 // calculates perk costs once a new perk/tier is selected

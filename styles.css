@@ -18,6 +18,9 @@ h2 {
 	font-family: VCR_OSD_MONO;
 	text-align: center;
 	margin-top: 110px;
+	margin-left: 50px;
+	width: 100%;
+	/* border: 1px solid white; */
 	/* display: block; */
 	/* float: center; */
 }
