@@ -20,7 +20,7 @@ function onLoad() {
 	perk3Change();
 	perk4Change();
 	perk5Change();
-	// checkDuplicates(); //gets called by each perk change
+	calcJess();
 }
 
 function populatePerkArray() {
@@ -218,180 +218,105 @@ function populateTeenTables() {
 
 // calculates perk costs once a new perk/tier is selected
 function perk1Change() {
-	var perk1Name = document.getElementById("perk1Name").value;
-	var perk1Tier = document.getElementById("perk1Tier").value;
 	var perk1Cost = 0;
 	var slot1Cost = document.getElementById("slot1Cost");
 
-	// convert perk 1's tier
-	if(perk1Tier === "Tier I") {
-		perk1Tier = 1;
-	}
-	else if(perk1Tier === "Tier II") {
-		perk1Tier = 2;
-	}
-	else if(perk1Tier === "Tier III") {
-		perk1Tier = 3;
-	}
+	var perk1 = getPerk1();
 	
 	// get and assign the object for the slot 1 perk
-	if(perk1Name === "--None--") {
+	if(perk1.name === "empty1") {
 		slot1Cost.innerHTML = 0;
 	}
 	else{
-		var perk1 = teenPerks.filter(perk => perk.name === perk1Name);
-		perk1 = perk1.filter(perk => perk.tier == perk1Tier);
-		perk1 = perk1[0];
-		perk1Cost = perk1.cost;
-		
-		slot1Cost.innerHTML = perk1Cost;
+		slot1Cost.innerHTML = perk1.cost;
 	}
 	
-	checkDuplicates();
+	checkDuplicates(); 
+	findOptimal();
 	
 	// todo: add in function that calculates the optimal teen
 }
 
-// calculates perk costs once a new perk/tier is selected
+// calculates perk2 costs once a new perk/tier is selected
 function perk2Change() {
-	var perk2Name = document.getElementById("perk2Name").value;
-	var perk2Tier = document.getElementById("perk2Tier").value;
 	var perk2Cost = 0;
 	var slot2Cost = document.getElementById("slot2Cost");
 
-	// convert perk 2's tier
-	if(perk2Tier === "Tier I") {
-		perk2Tier = 1;
-	}
-	else if(perk2Tier === "Tier II") {
-		perk2Tier = 2;
-	}
-	else if(perk2Tier === "Tier III") {
-		perk2Tier = 3;
-	}
+	var perk2 = getPerk2();
 	
 	// get and assign the object for the slot 1 perk
-	if(perk2Name === "--None--") {
+	if(perk2.name === "empty2") {
 		slot2Cost.innerHTML = 0;
 	}
 	else{
-		var perk2 = teenPerks.filter(perk => perk.name === perk2Name);
-		perk2 = perk2.filter(perk => perk.tier == perk2Tier);
-		perk2 = perk2[0];
-		perk2Cost = perk2.cost;
-		
-		slot2Cost.innerHTML = perk2Cost;
+		slot2Cost.innerHTML = perk2.cost;
 	}
 	
-	checkDuplicates();
+	checkDuplicates(); 
+	findOptimal();
 	
 	// todo: add in function that calculates the optimal teen
 }
 
-// calculates perk costs once a new perk/tier is selected
+// calculates perk3 costs once a new perk/tier is selected
 function perk3Change() {
-	var perk3Name = document.getElementById("perk3Name").value;
-	var perk3Tier = document.getElementById("perk3Tier").value;
 	var perk3Cost = 0;
 	var slot3Cost = document.getElementById("slot3Cost");
 
-	// convert perk 3's tier
-	if(perk3Tier === "Tier I") {
-		perk3Tier = 1;
-	}
-	else if(perk3Tier === "Tier II") {
-		perk3Tier = 2;
-	}
-	else if(perk3Tier === "Tier III") {
-		perk3Tier = 3;
-	}
+	var perk3 = getPerk3();
 	
-	// get and assign the object for the slot 1 perk
-	if(perk3Name === "--None--") {
+	// get and assign the object for the slot3 perk
+	if(perk3.name === "empty3") {
 		slot3Cost.innerHTML = 0;
 	}
 	else{
-		var perk3 = teenPerks.filter(perk => perk.name === perk3Name);
-		perk3 = perk3.filter(perk => perk.tier == perk3Tier);
-		perk3 = perk3[0];
-		perk3Cost = perk3.cost;
-		
-		slot3Cost.innerHTML = perk3Cost;
+		slot3Cost.innerHTML = perk3.cost;
 	}
 	
-	checkDuplicates();
+	checkDuplicates(); 
+	findOptimal();
 	
 	// todo: add in function that calculates the optimal teen
 }
 
 // calculates perk costs once a new perk/tier is selected
 function perk4Change() {
-	var perk4Name = document.getElementById("perk4Name").value;
-	var perk4Tier = document.getElementById("perk4Tier").value;
 	var perk4Cost = 0;
 	var slot4Cost = document.getElementById("slot4Cost");
 
-	// convert perk 4's tier
-	if(perk4Tier === "Tier I") {
-		perk4Tier = 1;
-	}
-	else if(perk4Tier === "Tier II") {
-		perk4Tier = 2;
-	}
-	else if(perk4Tier === "Tier III") {
-		perk4Tier = 3;
-	}
+	var perk4 = getPerk4();
 	
-	// get and assign the object for the slot 1 perk
-	if(perk4Name === "--None--") {
+	// get and assign the object for the slot4 perk
+	if(perk4.name === "empty4") {
 		slot4Cost.innerHTML = 0;
 	}
 	else{
-		var perk4 = teenPerks.filter(perk => perk.name === perk4Name);
-		perk4 = perk4.filter(perk => perk.tier == perk4Tier);
-		perk4 = perk4[0];
-		perk4Cost = perk4.cost;
-		
-		slot4Cost.innerHTML = perk4Cost;
+		slot4Cost.innerHTML = perk4.cost;
 	}
 	
-	checkDuplicates();
+	checkDuplicates(); 
+	findOptimal();
 	
 	// todo: add in function that calculates the optimal teen
 }
 
 // calculates perk costs once a new perk/tier is selected
 function perk5Change() {
-	var perk5Name = document.getElementById("perk5Name").value;
-	var perk5Tier = document.getElementById("perk5Tier").value;
 	var perk5Cost = 0;
 	var slot5Cost = document.getElementById("slot5Cost");
 
-	// convert perk 5's tier
-	if(perk5Tier === "Tier I") {
-		perk5Tier = 1;
-	}
-	else if(perk5Tier === "Tier II") {
-		perk5Tier = 2;
-	}
-	else if(perk5Tier === "Tier III") {
-		perk5Tier = 3;
-	}
+	var perk5 = getPerk5();
 	
-	// get and assign the object for the slot 1 perk
-	if(perk5Name === "--None--") {
+	// get and assign the object for the slot5 perk
+	if(perk5.name === "empty5") {
 		slot5Cost.innerHTML = 0;
 	}
 	else{
-		var perk5 = teenPerks.filter(perk => perk.name === perk5Name);
-		perk5 = perk5.filter(perk => perk.tier == perk5Tier);
-		perk5 = perk5[0];
-		perk5Cost = perk5.cost;
-		
-		slot5Cost.innerHTML = perk5Cost;
+		slot5Cost.innerHTML = perk5.cost;
 	}
 	
-	checkDuplicates();
+	checkDuplicates(); 
+	findOptimal();
 	
 	// todo: add in function that calculates the optimal teen
 }
@@ -441,10 +366,199 @@ function checkDuplicates() {
 	}
 }
 
+// run optimization on all teens
+function findOptimal() {
+	var jess = {name:"Jess", loadoutCost:calcJess()};
+	
+	/*
+		make array of teens
+		sort by loadout cost
+		post values to optimal Teen table
+	*/
+}
 
+// calculate Jess' perk loadout
+function calcJess() {
+	var jessPerkPoints = document.getElementById("jessPerkPointsNum").value;
+	var jessDiscount = document.getElementById("jessDiscountNum").value;
+	let jessDiscountPerks = [teenPerks[0].name, teenPerks[3].name, teenPerks[6].name];
+	var jessDiscountables = 0;
+	
+	var perk1 = getPerk1();
+	var perk2 = getPerk2();
+	var perk3 = getPerk3();
+	var perk4 = getPerk4();
+	var perk5 = getPerk5();
+	let perkArr = [perk1, perk2, perk3, perk4, perk5];
+	
+	// check if the equipped perks can be discounted
+	for(i=0; i<5; i++) {
+		var currPerk = perkArr[i];
+		if(jessDiscountPerks.includes(currPerk.name)) {
+			jessDiscountables++;
+		}
+	}
+	jessDiscount = Math.min(jessDiscountables, jessDiscount)*3;
+	
+	var jessLoadoutCost = perk1.cost + perk2.cost + perk3.cost + perk4.cost + perk5.cost - jessDiscount;
+	
+	return jessLoadoutCost;
+}
 
+// get perk1 (object with attributes for name, tier, costs, and Teen)
+function getPerk1() {
+	var perk1Name = document.getElementById("perk1Name").value;
+	var perk1Tier = document.getElementById("perk1Tier").value;
+	
+	// convert perk 1's tier
+	if(perk1Tier === "Tier I") {
+		perk1Tier = 1;
+	}
+	else if(perk1Tier === "Tier II") {
+		perk1Tier = 2;
+	}
+	else if(perk1Tier === "Tier III") {
+		perk1Tier = 3;
+	}
+	
+	var perk1;
+	if(perk1Name === "--None--"){
+		let emptyPerk = new Perk("empty1", 1, 0, "none");
+		return emptyPerk;
+	}
+	else {
+		perk1 = teenPerks.filter(perk => perk.name === perk1Name);
+		perk1 = perk1.filter(perk => perk.tier == perk1Tier);
+		// console.log(perk1);
+		perk1 = perk1[0];
+		
+		return perk1;
+	}
+}
 
+// get perk2 (object with attributes for name, tier, costs, and Teen)
+function getPerk2() {
+	var perk2Name = document.getElementById("perk2Name").value;
+	var perk2Tier = document.getElementById("perk2Tier").value;
+	
+	// convert perk 1's tier
+	if(perk2Tier === "Tier I") {
+		perk2Tier = 1;
+	}
+	else if(perk2Tier === "Tier II") {
+		perk2Tier = 2;
+	}
+	else if(perk2Tier === "Tier III") {
+		perk2Tier = 3;
+	}
+	
+	var perk2;
+	if(perk2Name === "--None--"){
+		let emptyPerk = new Perk("empty2", 1, 0, "none");
+		return emptyPerk;
+	}
+	else {
+		perk2 = teenPerks.filter(perk => perk.name === perk2Name);
+		perk2 = perk2.filter(perk => perk.tier == perk2Tier);
+		// console.log(perk2);
+		perk2 = perk2[0];
+		
+		return perk2;
+	}
+}
 
+// get perk3 (object with attributes for name, tier, costs, and Teen)
+function getPerk3() {
+	var perk3Name = document.getElementById("perk3Name").value;
+	var perk3Tier = document.getElementById("perk3Tier").value;
+	
+	// convert perk 1's tier
+	if(perk3Tier === "Tier I") {
+		perk3Tier = 1;
+	}
+	else if(perk3Tier === "Tier II") {
+		perk3Tier = 2;
+	}
+	else if(perk3Tier === "Tier III") {
+		perk3Tier = 3;
+	}
+	
+	var perk3;
+	if(perk3Name === "--None--"){
+		let emptyPerk = new Perk("empty3", 1, 0, "none");
+		return emptyPerk;
+	}
+	else {
+		perk3 = teenPerks.filter(perk => perk.name === perk3Name);
+		perk3 = perk3.filter(perk => perk.tier == perk3Tier);
+		// console.log(perk3);
+		perk3 = perk3[0];
+		
+		return perk3;
+	}
+}
+
+// get perk4 (object with attributes for name, tier, costs, and Teen)
+function getPerk4() {
+	var perk4Name = document.getElementById("perk4Name").value;
+	var perk4Tier = document.getElementById("perk4Tier").value;
+	
+	// convert perk 1's tier
+	if(perk4Tier === "Tier I") {
+		perk4Tier = 1;
+	}
+	else if(perk4Tier === "Tier II") {
+		perk4Tier = 2;
+	}
+	else if(perk4Tier === "Tier III") {
+		perk4Tier = 3;
+	}
+	
+	var perk4;
+	if(perk4Name === "--None--"){
+		let emptyPerk = new Perk("empty4", 1, 0, "none");
+		return emptyPerk;
+	}
+	else {
+		perk4 = teenPerks.filter(perk => perk.name === perk4Name);
+		perk4 = perk4.filter(perk => perk.tier == perk4Tier);
+		// console.log(perk4);
+		perk4 = perk4[0];
+		
+		return perk4;
+	}
+}
+
+// get perk5 (object with attributes for name, tier, costs, and Teen)
+function getPerk5() {
+	var perk5Name = document.getElementById("perk5Name").value;
+	var perk5Tier = document.getElementById("perk5Tier").value;
+	
+	// convert perk 1's tier
+	if(perk5Tier === "Tier I") {
+		perk5Tier = 1;
+	}
+	else if(perk5Tier === "Tier II") {
+		perk5Tier = 2;
+	}
+	else if(perk5Tier === "Tier III") {
+		perk5Tier = 3;
+	}
+	
+	var perk5;
+	if(perk5Name === "--None--"){
+		let emptyPerk = new Perk("empty5", 1, 0, "none");
+		return emptyPerk;
+	}
+	else {
+		perk5 = teenPerks.filter(perk => perk.name === perk5Name);
+		perk5 = perk5.filter(perk => perk.tier == perk5Tier);
+		// console.log(perk5);
+		perk5 = perk5[0];
+		
+		return perk5;
+	}
+}
 
 
 
