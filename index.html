@@ -228,6 +228,8 @@
 					</tr>
 				</table>
 				<h2>XAX XAX XAX XAX</h2>
+				
+				<!-- Jess' table -->
 				<table id="perkCostTable">
 					<tr>
 						<th style="border-width: 3px 0px 0px 3px;border-style:double solid solid double;border-color:black;"></th>
@@ -258,10 +260,144 @@
 					<tr>
 						<th style="border-width: 0px 0px 3px 3px;border-style:double double double double;text-align:center;">Discounts (0-3):</th>
 						<td style="border-width: 0px 3px 3px 0px;border-style:double double double double;border-color:rgb(178, 115, 0);" name="jessDiscount" id="jessDiscount">
-							<input type="number" name="jessDiscountNum" id="jessDiscountNum" min=0 max=3>
+							<input type="number" name="jessDiscountNum" id="jessDiscountNum" min=0 max=3 value=0>
 						</td>
 						<th colspan="2" style="border-width: 0px 0px 3px 0px;border-style:double double double double;text-align:center;">Perk Points Available (4-30):</th>
-						<td style="border-width: 0px 3px 3px 0px;border-style:double double double double;border-color:rgb(178, 115, 0);" name="jessPerkPoints" id="jessPerkPoints">XAX</td>
+						<td style="border-width: 0px 3px 3px 0px;border-style:double double double double;border-color:rgb(178, 115, 0);" name="jessPerkPoints" id="jessPerkPoints">
+							<input type="number" name="jessPerkPointsNum" id="jessPerkPointsNum" min=4 max=30 value=4>
+						</td>
+					</tr>
+				</table>
+				
+				<!-- Faith's table -->
+				<table id="perkCostTable">
+					<tr>
+						<td rowspan="3" style="border-width: 3px 3px 3px 3px;border-style:double double double double;"><img src="./images/256jess.webp" style="width:65%;height:65%;"></img></td>
+						<td style="border-width: 3px 3px 1px 0px;border-style:double double solid double;">Healing Hands</td>
+						<td style="border-width: 3px 0px 2px 0px;border-style:double solid dotted double;" name="healingHands1Cost" id="healingHands1Cost">XAX</td>
+						<td style="border-width: 3px 0px 2px 0px;border-style:double solid dotted double;" name="healingHands2Cost" id="healingHands2Cost">XAX</td>
+						<td style="border-width: 3px 3px 2px 0px;border-style:double double dotted double;" name="healingHands3Cost" id="healingHands3Cost">XAX</td>
+					</tr>
+					<tr>
+						<td style="border-width: 1px 3px 1px 0px;border-style:solid double solid double;">Magic Touch</td>
+						<td style="border-width: 0px 0px 2px 0px;border-style:double solid dotted double;" name="magicTouch1Cost" id="magicTouch1Cost">XAX</td>
+						<td style="border-width: 0px 0px 2px 0px;border-style:double solid dotted double;" name="magicTouch2Cost" id="magicTouch2Cost">XAX</td>
+						<td style="border-width: 0px 3px 2px 0px;border-style:double double dotted double;" name="magicTouch3Cost" id="magicTouch3Cost">XAX</td>
+					</tr>
+					<tr>
+						<td style="border-width: 1px 3px 3px 0px;border-style:solid double double double;">Secret Admirer</td>
+						<td style="border-width: 0px 0px 3px 0px;border-style:double solid double double;" name="secretAdmirer1Cost" id="secretAdmirer1Cost">XAX</td>
+						<td style="border-width: 0px 0px 3px 0px;border-style:double solid double double;" name="secretAdmirer2Cost" id="secretAdmirer2Cost">XAX</td>
+						<td style="border-width: 0px 3px 3px 0px;border-style:double double double double;" name="secretAdmirer3Cost" id="secretAdmirer3Cost">XAX</td>
+					</tr>
+					<tr>
+						<th style="border-width: 0px 0px 3px 3px;border-style:double double double double;text-align:center;">Discounts (0-3):</th>
+						<td style="border-width: 0px 3px 3px 0px;border-style:double double double double;border-color:rgb(178, 115, 0);" name="faithDiscount" id="faithDiscount">
+							<input type="number" name="faithDiscountNum" id="faithDiscountNum" min=0 max=3 value=0>
+						</td>
+						<th colspan="2" style="border-width: 0px 0px 3px 0px;border-style:double double double double;text-align:center;">Perk Points Available (4-30):</th>
+						<td style="border-width: 0px 3px 3px 0px;border-style:double double double double;border-color:rgb(178, 115, 0);" name="faithPerkPoints" id="faithPerkPoints">
+							<input type="number" name="faithPerkPointsNum" id="faithPerkPointsNum" min=4 max=30 value=4>
+						</td>
+					</tr>
+				</table>
+				
+				<!-- Brett's table -->
+				<table id="perkCostTable">
+					<tr>
+						<td rowspan="3" style="border-width: 3px 3px 3px 3px;border-style:double double double double;"><img src="./images/256jess.webp" style="width:65%;height:65%;"></img></td>
+						<td style="border-width: 3px 3px 1px 0px;border-style:double double solid double;">Evil Eye</td>
+						<td style="border-width: 3px 0px 2px 0px;border-style:double solid dotted double;" name="evilEye1Cost" id="evilEye1Cost">XAX</td>
+						<td style="border-width: 3px 0px 2px 0px;border-style:double solid dotted double;" name="evilEye2Cost" id="evilEye2Cost">XAX</td>
+						<td style="border-width: 3px 3px 2px 0px;border-style:double double dotted double;" name="evilEye3Cost" id="evilEye3Cost">XAX</td>
+					</tr>
+					<tr>
+						<td style="border-width: 1px 3px 1px 0px;border-style:solid double solid double;">Low Profile</td>
+						<td style="border-width: 0px 0px 2px 0px;border-style:double solid dotted double;" name="lowProfile1Cost" id="lowProfile1Cost">XAX</td>
+						<td style="border-width: 0px 0px 2px 0px;border-style:double solid dotted double;" name="lowProfile2Cost" id="lowProfile2Cost">XAX</td>
+						<td style="border-width: 0px 3px 2px 0px;border-style:double double dotted double;" name="lowProfile3Cost" id="lowProfile3Cost">XAX</td>
+					</tr>
+					<tr>
+						<td style="border-width: 1px 3px 3px 0px;border-style:solid double double double;">Secret Admirer</td>
+						<td style="border-width: 0px 0px 3px 0px;border-style:double solid double double;" name="secretAdmirer1Cost" id="secretAdmirer1Cost">XAX</td>
+						<td style="border-width: 0px 0px 3px 0px;border-style:double solid double double;" name="secretAdmirer2Cost" id="secretAdmirer2Cost">XAX</td>
+						<td style="border-width: 0px 3px 3px 0px;border-style:double double double double;" name="secretAdmirer3Cost" id="secretAdmirer3Cost">XAX</td>
+					</tr>
+					<tr>
+						<th style="border-width: 0px 0px 3px 3px;border-style:double double double double;text-align:center;">Discounts (0-3):</th>
+						<td style="border-width: 0px 3px 3px 0px;border-style:double double double double;border-color:rgb(178, 115, 0);" name="jessDiscount" id="jessDiscount">
+							<input type="number" name="jessDiscountNum" id="jessDiscountNum" min=0 max=3 value=0>
+						</td>
+						<th colspan="2" style="border-width: 0px 0px 3px 0px;border-style:double double double double;text-align:center;">Perk Points Available (4-30):</th>
+						<td style="border-width: 0px 3px 3px 0px;border-style:double double double double;border-color:rgb(178, 115, 0);" name="jessPerkPoints" id="jessPerkPoints">
+							<input type="number" name="jessPerkPointsNum" id="jessPerkPointsNum" min=4 max=30 value=4>
+						</td>
+					</tr>
+				</table>
+				
+				<!-- Leo's table -->
+				<table id="perkCostTable">
+					<tr>
+						<td rowspan="3" style="border-width: 3px 3px 3px 3px;border-style:double double double double;"><img src="./images/256jess.webp" style="width:65%;height:65%;"></img></td>
+						<td style="border-width: 3px 3px 1px 0px;border-style:double double solid double;">Evil Eye</td>
+						<td style="border-width: 3px 0px 2px 0px;border-style:double solid dotted double;" name="evilEye1Cost" id="evilEye1Cost">XAX</td>
+						<td style="border-width: 3px 0px 2px 0px;border-style:double solid dotted double;" name="evilEye2Cost" id="evilEye2Cost">XAX</td>
+						<td style="border-width: 3px 3px 2px 0px;border-style:double double dotted double;" name="evilEye3Cost" id="evilEye3Cost">XAX</td>
+					</tr>
+					<tr>
+						<td style="border-width: 1px 3px 1px 0px;border-style:solid double solid double;">Low Profile</td>
+						<td style="border-width: 0px 0px 2px 0px;border-style:double solid dotted double;" name="lowProfile1Cost" id="lowProfile1Cost">XAX</td>
+						<td style="border-width: 0px 0px 2px 0px;border-style:double solid dotted double;" name="lowProfile2Cost" id="lowProfile2Cost">XAX</td>
+						<td style="border-width: 0px 3px 2px 0px;border-style:double double dotted double;" name="lowProfile3Cost" id="lowProfile3Cost">XAX</td>
+					</tr>
+					<tr>
+						<td style="border-width: 1px 3px 3px 0px;border-style:solid double double double;">Silent Shadow</td>
+						<td style="border-width: 0px 0px 3px 0px;border-style:double solid double double;" name="silentShadow1Cost" id="silentShadow1Cost">XAX</td>
+						<td style="border-width: 0px 0px 3px 0px;border-style:double solid double double;" name="silentShadow2Cost" id="silentShadow2Cost">XAX</td>
+						<td style="border-width: 0px 3px 3px 0px;border-style:double double double double;" name="silentShadow3Cost" id="silentShadow3Cost">XAX</td>
+					</tr>
+					<tr>
+						<th style="border-width: 0px 0px 3px 3px;border-style:double double double double;text-align:center;">Discounts (0-3):</th>
+						<td style="border-width: 0px 3px 3px 0px;border-style:double double double double;border-color:rgb(178, 115, 0);" name="jessDiscount" id="jessDiscount">
+							<input type="number" name="jessDiscountNum" id="jessDiscountNum" min=0 max=3 value=0>
+						</td>
+						<th colspan="2" style="border-width: 0px 0px 3px 0px;border-style:double double double double;text-align:center;">Perk Points Available (4-30):</th>
+						<td style="border-width: 0px 3px 3px 0px;border-style:double double double double;border-color:rgb(178, 115, 0);" name="jessPerkPoints" id="jessPerkPoints">
+							<input type="number" name="jessPerkPointsNum" id="jessPerkPointsNum" min=4 max=30 value=4>
+						</td>
+					</tr>
+				</table>
+				
+				<!-- Gloria's table -->
+				<table id="perkCostTable">
+					<tr>
+						<td rowspan="3" style="border-width: 3px 3px 3px 3px;border-style:double double double double;"><img src="./images/256jess.webp" style="width:65%;height:65%;"></img></td>
+						<td style="border-width: 3px 3px 1px 0px;border-style:double double solid double;">Evil Eye</td>
+						<td style="border-width: 3px 0px 2px 0px;border-style:double solid dotted double;" name="evilEye1Cost" id="evilEye1Cost">XAX</td>
+						<td style="border-width: 3px 0px 2px 0px;border-style:double solid dotted double;" name="evilEye2Cost" id="evilEye2Cost">XAX</td>
+						<td style="border-width: 3px 3px 2px 0px;border-style:double double dotted double;" name="evilEye3Cost" id="evilEye3Cost">XAX</td>
+					</tr>
+					<tr>
+						<td style="border-width: 1px 3px 1px 0px;border-style:solid double solid double;">Low Profile</td>
+						<td style="border-width: 0px 0px 2px 0px;border-style:double solid dotted double;" name="lowProfile1Cost" id="lowProfile1Cost">XAX</td>
+						<td style="border-width: 0px 0px 2px 0px;border-style:double solid dotted double;" name="lowProfile2Cost" id="lowProfile2Cost">XAX</td>
+						<td style="border-width: 0px 3px 2px 0px;border-style:double double dotted double;" name="lowProfile3Cost" id="lowProfile3Cost">XAX</td>
+					</tr>
+					<tr>
+						<td style="border-width: 1px 3px 3px 0px;border-style:solid double double double;">Silent Shadow</td>
+						<td style="border-width: 0px 0px 3px 0px;border-style:double solid double double;" name="silentShadow1Cost" id="silentShadow1Cost">XAX</td>
+						<td style="border-width: 0px 0px 3px 0px;border-style:double solid double double;" name="silentShadow2Cost" id="silentShadow2Cost">XAX</td>
+						<td style="border-width: 0px 3px 3px 0px;border-style:double double double double;" name="silentShadow3Cost" id="silentShadow3Cost">XAX</td>
+					</tr>
+					<tr>
+						<th style="border-width: 0px 0px 3px 3px;border-style:double double double double;text-align:center;">Discounts (0-3):</th>
+						<td style="border-width: 0px 3px 3px 0px;border-style:double double double double;border-color:rgb(178, 115, 0);" name="jessDiscount" id="jessDiscount">
+							<input type="number" name="jessDiscountNum" id="jessDiscountNum" min=0 max=3 value=0>
+						</td>
+						<th colspan="2" style="border-width: 0px 0px 3px 0px;border-style:double double double double;text-align:center;">Perk Points Available (4-30):</th>
+						<td style="border-width: 0px 3px 3px 0px;border-style:double double double double;border-color:rgb(178, 115, 0);" name="jessPerkPoints" id="jessPerkPoints">
+							<input type="number" name="jessPerkPointsNum" id="jessPerkPointsNum" min=4 max=30 value=4>
+						</td>
 					</tr>
 				</table>
 			</div>

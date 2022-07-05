@@ -24,6 +24,14 @@ h2 {
 p {
 	color: red;
 }
+input {
+	width: 40px;
+	background-color: black;
+	color: white;
+	appearance: textfield;
+	border-color: rgb(91, 39, 130);
+	text-align: center;
+}
 p.instructions {
 	font-size: 18px;
 	color: rgb(178, 115, 0); /* Orange */
