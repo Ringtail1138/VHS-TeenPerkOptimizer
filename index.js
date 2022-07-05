@@ -20,6 +20,7 @@ function onLoad() {
 	perk3Change();
 	perk4Change();
 	perk5Change();
+	// checkDuplicates(); //gets called by each perk change
 }
 
 function populatePerkArray() {
@@ -246,6 +247,8 @@ function perk1Change() {
 		slot1Cost.innerHTML = perk1Cost;
 	}
 	
+	checkDuplicates();
+	
 	// todo: add in function that calculates the optimal teen
 }
 
@@ -279,6 +282,8 @@ function perk2Change() {
 		
 		slot2Cost.innerHTML = perk2Cost;
 	}
+	
+	checkDuplicates();
 	
 	// todo: add in function that calculates the optimal teen
 }
@@ -314,6 +319,8 @@ function perk3Change() {
 		slot3Cost.innerHTML = perk3Cost;
 	}
 	
+	checkDuplicates();
+	
 	// todo: add in function that calculates the optimal teen
 }
 
@@ -347,6 +354,8 @@ function perk4Change() {
 		
 		slot4Cost.innerHTML = perk4Cost;
 	}
+	
+	checkDuplicates();
 	
 	// todo: add in function that calculates the optimal teen
 }
@@ -382,10 +391,55 @@ function perk5Change() {
 		slot5Cost.innerHTML = perk5Cost;
 	}
 	
+	checkDuplicates();
+	
 	// todo: add in function that calculates the optimal teen
 }
 
-
+// check for duplicate perks
+function checkDuplicates() {
+	var perkArr = [];
+	
+	var perk1 = document.getElementById("perk1Name").value;
+	if(perk1 === "--None--") {
+		perk1 = "default1";
+	}
+	perkArr.push(perk1);
+	
+	var perk2 = document.getElementById("perk2Name").value;
+	if(perk2 === "--None--") {
+		perk2 = "default2";
+	}
+	perkArr.push(perk2);
+	
+	var perk3 = document.getElementById("perk3Name").value;
+	if(perk3 === "--None--") {
+		perk3 = "default3";
+	}
+	perkArr.push(perk3);
+	
+	var perk4 = document.getElementById("perk4Name").value;
+	if(perk4 === "--None--") {
+		perk4 = "default4";
+	}
+	perkArr.push(perk4);
+	
+	var perk5 = document.getElementById("perk5Name").value;
+	if(perk5 === "--None--") {
+		perk5 = "default5";
+	}
+	perkArr.push(perk5);
+	
+	var duplicate_bool = perkArr.some(x => perkArr.indexOf(x) !== perkArr.lastIndexOf(x));
+	
+	let duplicateHeader = document.getElementById("duplicateHeader");
+	if(duplicate_bool) {
+		duplicateHeader.innerHTML = "Error: Duplicate Perks";
+	}
+	else {
+		duplicateHeader.innerHTML = "No Duplicate Perks ✓";
+	}
+}
 
 
 
