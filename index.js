@@ -569,7 +569,7 @@ function calcBrett() {
 function calcLeo() {
 	var leoPerkPoints = document.getElementById("leoPerkPointsNum").value;
 	var leoDiscount = document.getElementById("leoDiscountNum").value;
-	let leoDiscountPerks = [teenPerks[18].name, teenPerks[21].name, teenPerks[24].name];
+	let leoDiscountPerks = [teenPerks[27].name, teenPerks[30].name, teenPerks[33].name];
 	var leoDiscountables = 0;
 	
 	var perk1 = getPerk1();
@@ -598,7 +598,7 @@ function calcLeo() {
 function calcGloria() {
 	var gloriaPerkPoints = document.getElementById("gloriaPerkPointsNum").value;
 	var gloriaDiscount = document.getElementById("gloriaDiscountNum").value;
-	let gloriaDiscountPerks = [teenPerks[18].name, teenPerks[21].name, teenPerks[24].name];
+	let gloriaDiscountPerks = [teenPerks[36].name, teenPerks[39].name, teenPerks[42].name];
 	var gloriaDiscountables = 0;
 	
 	var perk1 = getPerk1();
