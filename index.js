@@ -11,71 +11,71 @@ class Perk{
 let teenPerks = [];
 
 function onLoad() {
-	// alert(teenPerks[0].name);
 	populatePerkArray();
 	populatePerks();
 	populateTeenTables();
+	checkInputs();
 	perk1Change();
 	perk2Change();
 	perk3Change();
 	perk4Change();
 	perk5Change();
-	calcJess();
+	
 }
 
 function populatePerkArray() {
 	//add Jess perks
-	teenPerks.push(new Perk("Evil Eye",1,4,"Jess"));
+	teenPerks.push(new Perk("Evil Eye",1,4,"Jess")); //0
 	teenPerks.push(new Perk("Evil Eye",2,5,"Jess"));
 	teenPerks.push(new Perk("Evil Eye",3,7,"Jess"));
-	teenPerks.push(new Perk("Low Profile",1,4,"Jess"));
+	teenPerks.push(new Perk("Low Profile",1,4,"Jess")); //3
 	teenPerks.push(new Perk("Low Profile",2,8,"Jess"));
 	teenPerks.push(new Perk("Low Profile",3,12,"Jess"));
-	teenPerks.push(new Perk("Silent Shadow",1,3,"Jess"));
+	teenPerks.push(new Perk("Silent Shadow",1,3,"Jess")); //6
 	teenPerks.push(new Perk("Silent Shadow",2,5,"Jess"));
 	teenPerks.push(new Perk("Silent Shadow",3,8,"Jess"));
 
 	//add Faith perks
-	teenPerks.push(new Perk("Healing Hands",1,3,"Faith"));
+	teenPerks.push(new Perk("Healing Hands",1,3,"Faith")); //9
 	teenPerks.push(new Perk("Healing Hands",2,6,"Faith"));
 	teenPerks.push(new Perk("Healing Hands",3,9,"Faith"));
-	teenPerks.push(new Perk("Magic Touch",1,3,"Faith"));
+	teenPerks.push(new Perk("Magic Touch",1,3,"Faith")); //12
 	teenPerks.push(new Perk("Magic Touch",2,6,"Faith"));
 	teenPerks.push(new Perk("Magic Touch",3,9,"Faith"));
-	teenPerks.push(new Perk("Secret Admirer",1,4,"Faith"));
+	teenPerks.push(new Perk("Secret Admirer",1,4,"Faith")); //15
 	teenPerks.push(new Perk("Secret Admirer",2,6,"Faith"));
 	teenPerks.push(new Perk("Secret Admirer",3,8,"Faith"));
 
 	//add Brett perks
-	teenPerks.push(new Perk("Born Tough",1,4,"Brett"));
+	teenPerks.push(new Perk("Born Tough",1,4,"Brett")); //18
 	teenPerks.push(new Perk("Born Tough",2,8,"Brett"));
 	teenPerks.push(new Perk("Born Tough",3,12,"Brett"));
-	teenPerks.push(new Perk("Never Say Die",1,3,"Brett"));
+	teenPerks.push(new Perk("Never Say Die",1,3,"Brett")); //21
 	teenPerks.push(new Perk("Never Say Die",2,6,"Brett"));
 	teenPerks.push(new Perk("Never Say Die",3,9,"Brett"));
-	teenPerks.push(new Perk("Vice Grip",1,6,"Brett"));
+	teenPerks.push(new Perk("Vice Grip",1,6,"Brett")); //24
 	teenPerks.push(new Perk("Vice Grip",2,8,"Brett"));
 	teenPerks.push(new Perk("Vice Grip",3,12,"Brett"));
 
 	//add Leo perks
-	teenPerks.push(new Perk("Head Trip",1,3,"Leo"));
+	teenPerks.push(new Perk("Head Trip",1,3,"Leo")); //27
 	teenPerks.push(new Perk("Head Trip",2,4,"Leo"));
 	teenPerks.push(new Perk("Head Trip",3,5,"Leo"));
-	teenPerks.push(new Perk("Quick Fix",1,4,"Leo"));
+	teenPerks.push(new Perk("Quick Fix",1,4,"Leo")); //30
 	teenPerks.push(new Perk("Quick Fix",2,6,"Leo"));
 	teenPerks.push(new Perk("Quick Fix",3,8,"Leo"));
-	teenPerks.push(new Perk("Street Smart",1,4,"Leo"));
+	teenPerks.push(new Perk("Street Smart",1,4,"Leo")); //33
 	teenPerks.push(new Perk("Street Smart",2,6,"Leo"));
 	teenPerks.push(new Perk("Street Smart",3,8,"Leo"));
 
 	//add Gloria perks
-	teenPerks.push(new Perk("Friend Zone",1,4,"Gloria"));
+	teenPerks.push(new Perk("Friend Zone",1,4,"Gloria")); //36
 	teenPerks.push(new Perk("Friend Zone",2,6,"Gloria"));
 	teenPerks.push(new Perk("Friend Zone",3,8,"Gloria"));
-	teenPerks.push(new Perk("Lightning Fast",1,6,"Gloria"));
+	teenPerks.push(new Perk("Lightning Fast",1,6,"Gloria")); //39
 	teenPerks.push(new Perk("Lightning Fast",2,8,"Gloria"));
 	teenPerks.push(new Perk("Lightning Fast",3,10,"Gloria"));
-	teenPerks.push(new Perk("Team Spirit",1,6,"Gloria"));
+	teenPerks.push(new Perk("Team Spirit",1,6,"Gloria")); //42
 	teenPerks.push(new Perk("Team Spirit",2,9,"Gloria"));
 	teenPerks.push(new Perk("Team Spirit",3,12,"Gloria"));
 }
@@ -368,13 +368,114 @@ function checkDuplicates() {
 
 // run optimization on all teens
 function findOptimal() {
-	var jess = {name:"Jess", loadoutCost:calcJess()};
+	checkInputs();
 	
-	/*
-		make array of teens
-		sort by loadout cost
-		post values to optimal Teen table
-	*/
+	var jess = calcJess();
+	var faith = calcFaith();
+	var brett = calcBrett();
+	var leo = calcLeo();
+	var gloria = calcGloria();
+	
+	var teenArr = []; //push teens who can afford the loadout
+	var otherTeenArr = []; //push teens who can't afford the loadout
+	
+	// run a check to see if the teens can afford the loadout
+	if(jess.loadoutCost <= jess.availPoints){
+		teenArr.push(jess);
+	}
+	else{
+		otherTeenArr.push(jess);
+	}
+	if(faith.loadoutCost <= faith.availPoints){
+		teenArr.push(faith);
+	}
+	else{
+		otherTeenArr.push(faith);
+	}
+	if(brett.loadoutCost <= brett.availPoints){
+		teenArr.push(brett);
+	}
+	else{
+		otherTeenArr.push(brett);
+	}
+	if(leo.loadoutCost <= leo.availPoints){
+		teenArr.push(leo);
+	}
+	else{
+		otherTeenArr.push(leo);
+	}
+	if(gloria.loadoutCost <= gloria.availPoints){
+		teenArr.push(gloria);
+	}
+	else{
+		otherTeenArr.push(gloria);
+	}
+	
+	// sort the teens according to two conditions
+	// 1: can they afford the loadout?
+	// 2: smallest loadout cost is the most optimal
+	var teenArrSorted = teenArr.sort((a,b) => a.loadoutCost - b.loadoutCost);
+	var otherTeenArrSorted = otherTeenArr.sort((a,b) => a.loadoutCost - b.loadoutCost);
+	for(i=0; i<otherTeenArrSorted.length; i++){
+		teenArrSorted.push(otherTeenArrSorted[i]);
+	}
+	
+	// get IDs from the optimal Teen table
+	var optimalTeen = document.getElementById("optimalTeen");
+	var optimalTeen_ppUsed = document.getElementById("optimalTeen_ppUsed");
+	var optimalTeen_ppLeft = document.getElementById("optimalTeen_ppLeft");
+	
+	var secondTeen = document.getElementById("secondTeen");
+	var secondTeen_ppUsed = document.getElementById("secondTeen_ppUsed");
+	var secondTeen_ppLeft = document.getElementById("secondTeen_ppLeft");
+	
+	var thirdTeen = document.getElementById("thirdTeen");
+	var thirdTeen_ppUsed = document.getElementById("thirdTeen_ppUsed");
+	var thirdTeen_ppLeft = document.getElementById("thirdTeen_ppLeft");
+	
+	var fourthTeen = document.getElementById("fourthTeen");
+	var fourthTeen_ppUsed = document.getElementById("fourthTeen_ppUsed");
+	var fourthTeen_ppLeft = document.getElementById("fourthTeen_ppLeft");
+	
+	var fifthTeen = document.getElementById("fifthTeen");
+	var fifthTeen_ppUsed = document.getElementById("fifthTeen_ppUsed");
+	var fifthTeen_ppLeft = document.getElementById("fifthTeen_ppLeft");
+	
+	// post the values to the optimal Teen table
+	optimalTeen.innerHTML = teenArrSorted[0].name;
+	optimalTeen_ppUsed.innerHTML = teenArrSorted[0].loadoutCost;
+	optimalTeen_ppLeft.innerHTML = teenArrSorted[0].availPoints - teenArrSorted[0].loadoutCost;
+	if((teenArrSorted[0].availPoints - teenArrSorted[0].loadoutCost) < 0){
+		optimalTeen_ppLeft.style.color = "red";
+	}
+	
+	secondTeen.innerHTML = teenArrSorted[1].name;
+	secondTeen_ppUsed.innerHTML = teenArrSorted[1].loadoutCost;
+	secondTeen_ppLeft.innerHTML = teenArrSorted[1].availPoints - teenArrSorted[1].loadoutCost;
+	if((teenArrSorted[1].availPoints - teenArrSorted[1].loadoutCost) < 0){
+		secondTeen_ppLeft.style.color = "red";
+	}
+	
+	thirdTeen.innerHTML = teenArrSorted[2].name;
+	thirdTeen_ppUsed.innerHTML = teenArrSorted[2].loadoutCost;
+	thirdTeen_ppLeft.innerHTML = teenArrSorted[2].availPoints - teenArrSorted[2].loadoutCost;
+	if((teenArrSorted[2].availPoints - teenArrSorted[2].loadoutCost) < 0){
+		thirdTeen_ppLeft.style.color = "red";
+	}
+	
+	fourthTeen.innerHTML = teenArrSorted[3].name;
+	fourthTeen_ppUsed.innerHTML = teenArrSorted[3].loadoutCost;
+	fourthTeen_ppLeft.innerHTML = teenArrSorted[3].availPoints - teenArrSorted[3].loadoutCost;
+	if((teenArrSorted[3].availPoints - teenArrSorted[3].loadoutCost) < 0){
+		fourthTeen_ppLeft.style.color = "red";
+	}
+	
+	fifthTeen.innerHTML = teenArrSorted[4].name;
+	fifthTeen_ppUsed.innerHTML = teenArrSorted[4].loadoutCost;
+	fifthTeen_ppLeft.innerHTML = teenArrSorted[4].availPoints - teenArrSorted[4].loadoutCost;
+	if((teenArrSorted[4].availPoints - teenArrSorted[4].loadoutCost) < 0){
+		fifthTeen_ppLeft.style.color = "red";
+	}
 }
 
 // calculate Jess' perk loadout
@@ -401,8 +502,125 @@ function calcJess() {
 	jessDiscount = Math.min(jessDiscountables, jessDiscount)*3;
 	
 	var jessLoadoutCost = perk1.cost + perk2.cost + perk3.cost + perk4.cost + perk5.cost - jessDiscount;
+	var jess = {name:"Jess", loadoutCost:jessLoadoutCost, availPoints:jessPerkPoints};
 	
-	return jessLoadoutCost;
+	return jess;
+}
+
+// calculate Faith's perk loadout
+function calcFaith() {
+	var faithPerkPoints = document.getElementById("faithPerkPointsNum").value;
+	var faithDiscount = document.getElementById("faithDiscountNum").value;
+	let faithDiscountPerks = [teenPerks[9].name, teenPerks[12].name, teenPerks[15].name];
+	var faithDiscountables = 0;
+	
+	var perk1 = getPerk1();
+	var perk2 = getPerk2();
+	var perk3 = getPerk3();
+	var perk4 = getPerk4();
+	var perk5 = getPerk5();
+	let perkArr = [perk1, perk2, perk3, perk4, perk5];
+	
+	// check if the equipped perks can be discounted
+	for(i=0; i<5; i++) {
+		var currPerk = perkArr[i];
+		if(faithDiscountPerks.includes(currPerk.name)) {
+			faithDiscountables++;
+		}
+	}
+	faithDiscount = Math.min(faithDiscountables, faithDiscount)*3;
+	
+	var faithLoadoutCost = perk1.cost + perk2.cost + perk3.cost + perk4.cost + perk5.cost - faithDiscount;
+	var faith = {name:"Faith", loadoutCost:faithLoadoutCost, availPoints:faithPerkPoints};
+	
+	return faith;
+}
+
+// calculate Brett's perk loadout
+function calcBrett() {
+	var brettPerkPoints = document.getElementById("brettPerkPointsNum").value;
+	var brettDiscount = document.getElementById("brettDiscountNum").value;
+	let brettDiscountPerks = [teenPerks[18].name, teenPerks[21].name, teenPerks[24].name];
+	var brettDiscountables = 0;
+	
+	var perk1 = getPerk1();
+	var perk2 = getPerk2();
+	var perk3 = getPerk3();
+	var perk4 = getPerk4();
+	var perk5 = getPerk5();
+	let perkArr = [perk1, perk2, perk3, perk4, perk5];
+	
+	// check if the equipped perks can be discounted
+	for(i=0; i<5; i++) {
+		var currPerk = perkArr[i];
+		if(brettDiscountPerks.includes(currPerk.name)) {
+			brettDiscountables++;
+		}
+	}
+	brettDiscount = Math.min(brettDiscountables, brettDiscount)*3;
+	
+	var brettLoadoutCost = perk1.cost + perk2.cost + perk3.cost + perk4.cost + perk5.cost - brettDiscount;
+	var brett = {name:"Brett", loadoutCost:brettLoadoutCost, availPoints:brettPerkPoints};
+	
+	return brett;
+}
+
+// calculate Leo's perk loadout
+function calcLeo() {
+	var leoPerkPoints = document.getElementById("leoPerkPointsNum").value;
+	var leoDiscount = document.getElementById("leoDiscountNum").value;
+	let leoDiscountPerks = [teenPerks[18].name, teenPerks[21].name, teenPerks[24].name];
+	var leoDiscountables = 0;
+	
+	var perk1 = getPerk1();
+	var perk2 = getPerk2();
+	var perk3 = getPerk3();
+	var perk4 = getPerk4();
+	var perk5 = getPerk5();
+	let perkArr = [perk1, perk2, perk3, perk4, perk5];
+	
+	// check if the equipped perks can be discounted
+	for(i=0; i<5; i++) {
+		var currPerk = perkArr[i];
+		if(leoDiscountPerks.includes(currPerk.name)) {
+			leoDiscountables++;
+		}
+	}
+	leoDiscount = Math.min(leoDiscountables, leoDiscount)*3;
+	
+	var leoLoadoutCost = perk1.cost + perk2.cost + perk3.cost + perk4.cost + perk5.cost - leoDiscount;
+	var leo = {name:"Leo", loadoutCost:leoLoadoutCost, availPoints:leoPerkPoints};
+	
+	return leo;
+}
+
+// calculate Gloria's perk loadout
+function calcGloria() {
+	var gloriaPerkPoints = document.getElementById("gloriaPerkPointsNum").value;
+	var gloriaDiscount = document.getElementById("gloriaDiscountNum").value;
+	let gloriaDiscountPerks = [teenPerks[18].name, teenPerks[21].name, teenPerks[24].name];
+	var gloriaDiscountables = 0;
+	
+	var perk1 = getPerk1();
+	var perk2 = getPerk2();
+	var perk3 = getPerk3();
+	var perk4 = getPerk4();
+	var perk5 = getPerk5();
+	let perkArr = [perk1, perk2, perk3, perk4, perk5];
+	
+	// check if the equipped perks can be discounted
+	for(i=0; i<5; i++) {
+		var currPerk = perkArr[i];
+		if(gloriaDiscountPerks.includes(currPerk.name)) {
+			gloriaDiscountables++;
+		}
+	}
+	gloriaDiscount = Math.min(gloriaDiscountables, gloriaDiscount)*3;
+	
+	var gloriaLoadoutCost = perk1.cost + perk2.cost + perk3.cost + perk4.cost + perk5.cost - gloriaDiscount;
+	var gloria = {name:"Gloria", loadoutCost:gloriaLoadoutCost, availPoints:gloriaPerkPoints};
+	
+	return gloria;
 }
 
 // get perk1 (object with attributes for name, tier, costs, and Teen)
@@ -560,7 +778,92 @@ function getPerk5() {
 	}
 }
 
-
+function checkInputs() {
+	var jessPerkPoints = document.getElementById("jessPerkPointsNum");
+	var jessDiscount = document.getElementById("jessDiscountNum");
+	
+	var faithPerkPoints = document.getElementById("faithPerkPointsNum");
+	var faithDiscount = document.getElementById("faithDiscountNum");
+	
+	var brettPerkPoints = document.getElementById("brettPerkPointsNum");
+	var brettDiscount = document.getElementById("brettDiscountNum");
+	
+	var leoPerkPoints = document.getElementById("leoPerkPointsNum");
+	var leoDiscount = document.getElementById("leoDiscountNum");
+	
+	var gloriaPerkPoints = document.getElementById("gloriaPerkPointsNum");
+	var gloriaDiscount = document.getElementById("gloriaDiscountNum");
+	
+	// check Jess
+	if(jessPerkPoints.value > 30){
+		jessPerkPoints.value = 30;
+	}
+	else if(jessPerkPoints.value < 4){
+		jessPerkPoints.value = 4;
+	}
+	if(jessDiscount.value > 3){
+		jessDiscount.value = 3;
+	}
+	else if(jessDiscount.value < 0){
+		jessDiscount.value = 0;
+	}
+	
+	// check Faith
+	if(faithPerkPoints.value > 30){
+		faithPerkPoints.value = 30;
+	}
+	else if(faithPerkPoints.value < 4){
+		faithPerkPoints.value = 4;
+	}
+	if(faithDiscount.value > 3){
+		faithDiscount.value = 3;
+	}
+	else if(faithDiscount.value < 0){
+		faithDiscount.value = 0;
+	}
+	
+	// check Brett
+	if(brettPerkPoints.value > 30){
+		brettPerkPoints.value = 30;
+	}
+	else if(brettPerkPoints.value < 4){
+		brettPerkPoints.value = 4;
+	}
+	if(brettDiscount.value > 3){
+		brettDiscount.value = 3;
+	}
+	else if(brettDiscount.value < 0){
+		brettDiscount.value = 0;
+	}
+	
+	// check Leo
+	if(leoPerkPoints.value > 30){
+		leoPerkPoints.innerHTML = 30;
+	}
+	else if(leoPerkPoints.value < 4){
+		leoPerkPoints.innerHTML = 4;
+	}
+	if(leoDiscount.value > 3){
+		leoDiscount.innerHTML = 3;
+	}
+	else if(leoDiscount.value < 0){
+		leoDiscount.innerHTML = 0;
+	}
+	
+	// check Gloria
+	if(gloriaPerkPoints.value > 30){
+		gloriaPerkPoints.innerHTML = 30;
+	}
+	else if(gloriaPerkPoints.value < 4){
+		gloriaPerkPoints.innerHTML = 4;
+	}
+	if(gloriaDiscount.value > 3){
+		gloriaDiscount.innerHTML = 3;
+	}
+	else if(gloriaDiscount.value < 0){
+		gloriaDiscount.innerHTML = 0;
+	}
+}
 
 
 
