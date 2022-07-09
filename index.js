@@ -448,12 +448,18 @@ function findOptimal() {
 	if((teenArrSorted[0].availPoints - teenArrSorted[0].loadoutCost) < 0){
 		optimalTeen_ppLeft.style.color = "red";
 	}
+	else {
+		optimalTeen_ppLeft.style.color = "white";
+	}
 	
 	secondTeen.innerHTML = teenArrSorted[1].name;
 	secondTeen_ppUsed.innerHTML = teenArrSorted[1].loadoutCost;
 	secondTeen_ppLeft.innerHTML = teenArrSorted[1].availPoints - teenArrSorted[1].loadoutCost;
 	if((teenArrSorted[1].availPoints - teenArrSorted[1].loadoutCost) < 0){
 		secondTeen_ppLeft.style.color = "red";
+	}
+	else {
+		secondTeen_ppLeft.style.color = "white";
 	}
 	
 	thirdTeen.innerHTML = teenArrSorted[2].name;
@@ -462,6 +468,9 @@ function findOptimal() {
 	if((teenArrSorted[2].availPoints - teenArrSorted[2].loadoutCost) < 0){
 		thirdTeen_ppLeft.style.color = "red";
 	}
+	else {
+		thirdTeen_ppLeft.style.color = "white";
+	}
 	
 	fourthTeen.innerHTML = teenArrSorted[3].name;
 	fourthTeen_ppUsed.innerHTML = teenArrSorted[3].loadoutCost;
@@ -469,12 +478,18 @@ function findOptimal() {
 	if((teenArrSorted[3].availPoints - teenArrSorted[3].loadoutCost) < 0){
 		fourthTeen_ppLeft.style.color = "red";
 	}
+	else {
+		fourthTeen_ppLeft.style.color = "white";
+	}
 	
 	fifthTeen.innerHTML = teenArrSorted[4].name;
 	fifthTeen_ppUsed.innerHTML = teenArrSorted[4].loadoutCost;
 	fifthTeen_ppLeft.innerHTML = teenArrSorted[4].availPoints - teenArrSorted[4].loadoutCost;
 	if((teenArrSorted[4].availPoints - teenArrSorted[4].loadoutCost) < 0){
 		fifthTeen_ppLeft.style.color = "red";
+	}
+	else {
+		fifthTeen_ppLeft.style.color = "white";
 	}
 }
 
