@@ -54,8 +54,8 @@ function populatePerkArray() {
 	teenPerks.push(new Perk("Never Say Die",2,6,"Brett"));
 	teenPerks.push(new Perk("Never Say Die",3,9,"Brett"));
 	teenPerks.push(new Perk("Vice Grip",1,6,"Brett")); //24
-	teenPerks.push(new Perk("Vice Grip",2,8,"Brett"));
-	teenPerks.push(new Perk("Vice Grip",3,12,"Brett"));
+	teenPerks.push(new Perk("Vice Grip",2,10,"Brett"));
+	teenPerks.push(new Perk("Vice Grip",3,14,"Brett"));
 
 	//add Leo perks
 	teenPerks.push(new Perk("Head Trip",1,3,"Leo")); //27
@@ -73,8 +73,8 @@ function populatePerkArray() {
 	teenPerks.push(new Perk("Friend Zone",2,6,"Gloria"));
 	teenPerks.push(new Perk("Friend Zone",3,8,"Gloria"));
 	teenPerks.push(new Perk("Lightning Fast",1,6,"Gloria")); //39
-	teenPerks.push(new Perk("Lightning Fast",2,8,"Gloria"));
-	teenPerks.push(new Perk("Lightning Fast",3,10,"Gloria"));
+	teenPerks.push(new Perk("Lightning Fast",2,9,"Gloria"));
+	teenPerks.push(new Perk("Lightning Fast",3,12,"Gloria"));
 	teenPerks.push(new Perk("Team Spirit",1,6,"Gloria")); //42
 	teenPerks.push(new Perk("Team Spirit",2,9,"Gloria"));
 	teenPerks.push(new Perk("Team Spirit",3,12,"Gloria"));
