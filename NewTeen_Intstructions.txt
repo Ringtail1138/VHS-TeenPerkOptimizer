@@ -1,0 +1,14 @@
+What code to update with new teens:
+
+HTML side
+	Add Teen slot in optimalTeenTable
+	Add Teen's perkCostTable
+
+JS side
+	Add perks to populatePerkArray()
+	Add perks to populateTeenTables()
+	Add Teen to findOptimal()
+	Add calcTeen() function for Teen
+	Add Teen to checkInputs()
+
+Comment newly added code until ready to ACTIVATE
