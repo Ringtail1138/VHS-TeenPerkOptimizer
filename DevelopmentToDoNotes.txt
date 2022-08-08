@@ -1,0 +1,7 @@
+Development ToDo Notes
+
+Add popup (on click?) for perk descriptions
+	Will test for on-click vs on-hover to see which feels the best
+
+Change code to use Teen potentials for discounts instead of discounting a Teen for their own perks
+	In the case where some future Teens share the same potential, this change will be good in the long run
