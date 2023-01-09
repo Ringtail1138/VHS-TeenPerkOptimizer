@@ -79,18 +79,16 @@ function populatePerkArray() {
 	teenPerks.push(new Perk("Team Spirit",2,9,"Gloria"));
 	teenPerks.push(new Perk("Team Spirit",3,12,"Gloria"));
 	
-	/* ACTIVATE
 	//add Reggie perks
-	teenPerks.push(new Perk("Perk 1",1,4,"Reggie")); //45
-	teenPerks.push(new Perk("Perk 1",2,6,"Reggie"));
-	teenPerks.push(new Perk("Perk 1",3,8,"Reggie"));
-	teenPerks.push(new Perk("Perk 2",1,6,"Reggie")); //48
-	teenPerks.push(new Perk("Perk 2",2,9,"Reggie"));
-	teenPerks.push(new Perk("Perk 2",3,12,"Reggie"));
-	teenPerks.push(new Perk("Perk 3",1,6,"Reggie")); //51
-	teenPerks.push(new Perk("Perk 3",2,9,"Reggie"));
-	teenPerks.push(new Perk("Perk 3",3,12,"Reggie"));
-	 */
+	teenPerks.push(new Perk("All Systems Go",1,4,"Reggie")); //45
+	teenPerks.push(new Perk("All Systems Go",2,8,"Reggie"));
+	teenPerks.push(new Perk("All Systems Go",3,12,"Reggie"));
+	teenPerks.push(new Perk("Arcade Hero",1,4,"Reggie")); //48
+	teenPerks.push(new Perk("Arcade Hero",2,8,"Reggie"));
+	teenPerks.push(new Perk("Arcade Hero",3,12,"Reggie"));
+	teenPerks.push(new Perk("Steady Hand ",1,5,"Reggie")); //51
+	teenPerks.push(new Perk("Steady Hand ",2,9,"Reggie"));
+	teenPerks.push(new Perk("Steady Hand ",3,13,"Reggie"));
 }
 
 // adds perk names and tiers to the perk selection table
@@ -228,7 +226,6 @@ function populateTeenTables() {
 	document.getElementById("teamSpirit2Cost").innerHTML = teenPerks[43].cost;
 	document.getElementById("teamSpirit3Cost").innerHTML = teenPerks[44].cost;
 	
-	/* ACTIVATE
 	// Reggie's table
 	document.getElementById("perk1Tier1Cost").innerHTML = teenPerks[45].cost;
 	document.getElementById("perk1Tier2Cost").innerHTML = teenPerks[46].cost;
@@ -239,7 +236,6 @@ function populateTeenTables() {
 	document.getElementById("perk3Tier1Cost").innerHTML = teenPerks[51].cost;
 	document.getElementById("perk3Tier2Cost").innerHTML = teenPerks[52].cost;
 	document.getElementById("perk3Tier3Cost").innerHTML = teenPerks[53].cost;
-	 */
 }
 
 // calculates perk costs once a new perk/tier is selected
@@ -401,9 +397,7 @@ function findOptimal() {
 	var brett = calcBrett();
 	var leo = calcLeo();
 	var gloria = calcGloria();
-	/* ACTIVATE
 	var reggie = calcReggie();
-	*/
 	
 	var teenArr = []; //push teens who can afford the loadout
 	var otherTeenArr = []; //push teens who can't afford the loadout
@@ -439,14 +433,12 @@ function findOptimal() {
 	else{
 		otherTeenArr.push(gloria);
 	}
-	/* ACTIVATE
 	if(reggie.loadoutCost <= reggie.availPoints){
 		teenArr.push(reggie);
 	}
 	else{
 		otherTeenArr.push(reggie);
 	}
-	*/
 	
 	// sort the teens according to two conditions
 	// 1: can they afford the loadout?
@@ -478,11 +470,9 @@ function findOptimal() {
 	var fifthTeen_ppUsed = document.getElementById("fifthTeen_ppUsed");
 	var fifthTeen_ppLeft = document.getElementById("fifthTeen_ppLeft");
 	
-	/* ACTIVATE
 	var sixthTeen = document.getElementById("sixthTeen");
 	var sixthTeen_ppUsed = document.getElementById("sixthTeen_ppUsed");
 	var sixthTeen_ppLeft = document.getElementById("sixthTeen_ppLeft");
-	*/
 	
 	// post the values to the optimal Teen table
 	optimalTeen.innerHTML = teenArrSorted[0].name;
@@ -535,7 +525,6 @@ function findOptimal() {
 		fifthTeen_ppLeft.style.color = "white";
 	}
 	
-	/* ACTIVATE
 	sixthTeen.innerHTML = teenArrSorted[5].name;
 	sixthTeen_ppUsed.innerHTML = teenArrSorted[5].loadoutCost;
 	sixthTeen_ppLeft.innerHTML = teenArrSorted[5].availPoints - teenArrSorted[5].loadoutCost;
@@ -545,7 +534,6 @@ function findOptimal() {
 	else {
 		sixthTeen_ppLeft.style.color = "white";
 	}
-	*/
 }
 
 // calculate Jess' perk loadout
@@ -693,7 +681,6 @@ function calcGloria() {
 	return gloria;
 }
 
-/* ACTIVATE
 // calculate Reggie's perk loadout
 function calcReggie() {
 	var reggiePerkPoints = document.getElementById("reggiePerkPointsNum").value;
@@ -722,7 +709,6 @@ function calcReggie() {
 	
 	return reggie;
 }
-*/
 
 // get perk1 (object with attributes for name, tier, costs, and Teen)
 function getPerk1() {
@@ -895,10 +881,8 @@ function checkInputs() {
 	var gloriaPerkPoints = document.getElementById("gloriaPerkPointsNum");
 	var gloriaDiscount = document.getElementById("gloriaDiscountNum");
 	
-	/* ACTIVATE
 	var reggiePerkPoints = document.getElementById("reggiePerkPointsNum");
 	var reggieDiscount = document.getElementById("reggieDiscountNum");
-	*/
 	
 	// check Jess
 	if(jessPerkPoints.value > 30){
@@ -970,7 +954,6 @@ function checkInputs() {
 		gloriaDiscount.innerHTML = 0;
 	}
 	
-	/* ACTIVATE
 	// check Reggie
 	if(reggiePerkPoints.value > 30){
 		reggiePerkPoints.innerHTML = 30;
@@ -984,7 +967,6 @@ function checkInputs() {
 	else if(reggieDiscount.value < 0){
 		reggieDiscount.innerHTML = 0;
 	}
-	*/
 }
 
 
